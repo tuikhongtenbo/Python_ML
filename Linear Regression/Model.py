@@ -9,17 +9,18 @@ class LinearRegression:
     def fit(self, X, y):
         n_samples, n_feature = X.shape
 
-        self.weights = np.zeros((1, n_feature + 1))
-        self.bias = 0
+        self.weights = np.ones((n_feature + 1, 1))
         X = np.hstack([np.ones((n_samples, 1)), X])
+
+        y = y.reshape(-1, 1)
 
         self.cost = []     
 
         for i in range(self.epochs):
-            y_hat = np.dot(X, self.weights)
-            error = y_hat - y.reshape(1, -1)
+            y_hat = X * self.weights.reshape(-1, 1)
+            error = y_hat - y
             current_cost = (1 / (2 * n_samples)) * np.sum(error**2)
-            d_dw = (1 / n_samples) * (np.dot(X, error))
+            d_dw = (1 / n_samples) * (np.dot(X.T, error))
             self.weights -= self.lr*d_dw
             self.cost.append(current_cost)
             print(self.cost[i])
