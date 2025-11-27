@@ -94,6 +94,7 @@ def main():
     if device == 'cuda' and not torch.cuda.is_available():
         print("CUDA not available, using CPU")
         device = 'cpu'
+        config.training.device = 'cpu'  # Update config
     
     # Determine model type and task type
     model_name = config.model.name.lower()
@@ -117,13 +118,14 @@ def main():
         print(f"Tag mapping: {tag2idx}")
         
         # Create Encoder model
+        num_tags = len(tag2idx) + 1
         model = Encoder(
             vocab_size=len(vocab),
             embedding_dim=config.model.embedding_dim,
             hidden_size=config.model.hidden_size,
             num_layers=config.model.num_layers,
             dropout=config.model.dropout,
-            num_tags=len(tag2idx)
+            num_tags=num_tags
         )
         
         print(f"\nModel architecture:")
@@ -132,7 +134,8 @@ def main():
         print(f"  Hidden size: {config.model.hidden_size}")
         print(f"  Number of BiLSTM layers: {config.model.num_layers}")
         print(f"  Dropout: {config.model.dropout}")
-        print(f"  Number of tags: {len(tag2idx)}")
+        print(f"  Number of tags (including padding): {num_tags}")
+        print(f"  Number of actual tags: {len(tag2idx)}")
         print(f"  Total parameters: {sum(p.numel() for p in model.parameters()):,}")
         
         # Create NER trainer
@@ -165,6 +168,9 @@ def main():
         print(f"Number of classes: {len(label2idx)}")
         print(f"Label mapping: {label2idx}")
         
+        # Get number of classes from dataset
+        num_classes = len(label2idx)
+        
         # Create model (LSTM or GRU)
         if model_name == 'gru':
             model = GRU(
@@ -172,7 +178,8 @@ def main():
                 embedding_dim=config.model.embedding_dim,
                 hidden_size=config.model.hidden_size,
                 num_layers=config.model.num_layers,
-                dropout=config.model.dropout
+                dropout=config.model.dropout,
+                num_classes=num_classes
             )
         else:  # Default to LSTM
             model = LSTM(
@@ -180,7 +187,8 @@ def main():
                 embedding_dim=config.model.embedding_dim,
                 hidden_size=config.model.hidden_size,
                 num_layers=config.model.num_layers,
-                dropout=config.model.dropout
+                dropout=config.model.dropout,
+                num_classes=num_classes
             )
         
         print(f"\nModel architecture:")
@@ -189,6 +197,7 @@ def main():
         print(f"  Hidden size: {config.model.hidden_size}")
         print(f"  Number of layers: {config.model.num_layers}")
         print(f"  Dropout: {config.model.dropout}")
+        print(f"  Number of classes: {num_classes}")
         print(f"  Total parameters: {sum(p.numel() for p in model.parameters()):,}")
         
         # Create trainer

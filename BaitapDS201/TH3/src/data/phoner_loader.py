@@ -40,7 +40,7 @@ class PhoNERDataset(Dataset):
             for tag_seq in self.tags:
                 all_tags.extend(tag_seq)
             unique_tags = sorted(set(all_tags))
-            self.tag2idx = {tag: idx for idx, tag in enumerate(unique_tags)}
+            self.tag2idx = {tag: idx + 1 for idx, tag in enumerate(unique_tags)}
         else:
             self.tag2idx = tag2idx
         
@@ -97,8 +97,7 @@ class PhoNERDataset(Dataset):
         if len(tag_indices) > self.max_length:
             tag_indices = tag_indices[:self.max_length]
         else:
-            # Pad with -1 
-            tag_indices = tag_indices + [-1] * (self.max_length - len(tag_indices))
+            tag_indices = tag_indices + [0] * (self.max_length - len(tag_indices))
         
         # Convert to tensors
         input_ids = torch.tensor(encoded, dtype=torch.long)

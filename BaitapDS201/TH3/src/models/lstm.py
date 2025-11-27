@@ -1,50 +1,96 @@
 """
-LSTM model with 5 layers and hidden size is 256
+Encoder model with 5 layers of BiLSTM 
 """
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 
-class LSTM(nn.Module):
+class Encoder(nn.Module):
     """
-    LSTM model with 5 layers and hidden size is 256
+    Encoder model with 5 layers of BiLSTM with hidden size 256
     """
-    def __init__(self, vocab_size, embedding_dim, hidden_size, num_layers, dropout):
+    def __init__(self, vocab_size, embedding_dim, hidden_size, num_layers, dropout, num_tags):
+        super(Encoder, self).__init__()
         
-        super(LSTM, self).__init__()
-
-        self.embedding = nn.Embedding(vocab_size, embedding_dim)
-        self.lstm = nn.LSTM(embedding_dim, hidden_size, num_layers, dropout=dropout, batch_first=True)
-        self.fc1 = nn.Linear(hidden_size, hidden_size)
-        self.relu1 = nn.ReLU()
-        self.dropout1 = nn.Dropout(dropout)
-        self.fc2 = nn.Linear(hidden_size, hidden_size)
-        self.relu2 = nn.ReLU()
-        self.dropout2 = nn.Dropout(dropout)
-        self.fc3 = nn.Linear(hidden_size, 3)
+        self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=0)
+        
+        # Bidirectional LSTM
+        self.bilstm = nn.LSTM(
+            embedding_dim, 
+            hidden_size, 
+            num_layers, 
+            dropout=dropout if num_layers > 1 else 0,
+            batch_first=True,
+            bidirectional=True
+        )
+        self.fc = nn.Linear(2 * hidden_size, num_tags)
+        self.dropout = nn.Dropout(dropout)
     
     def forward(self, x):
-        
+
         # Embedding layer
         embedded = self.embedding(x)  # (batch_size, seq_length, embedding_dim)
+        embedded = self.dropout(embedded)
         
-        # LSTM layer
-        lstm_out, (hidden, cell) = self.lstm(embedded)  # lstm_out: (batch_size, seq_length, hidden_size)
+        # BiLSTM layers
+        lstm_out, (hidden, cell) = self.bilstm(embedded)  
+        # lstm_out: (batch_size, seq_length, 2 * hidden_size)
         
-        # Use the last output of the sequence
-        last_output = lstm_out[:, -1, :]  # (batch_size, hidden_size)
+        # Apply dropout
+        lstm_out = self.dropout(lstm_out)
         
-        # Fully connected layers
-        out = self.fc1(last_output)
-        out = self.relu1(out)
-        out = self.dropout1(out)
+        # Output layer for each token 
+        output = self.fc(lstm_out)  # (batch_size, seq_length, num_tags)
         
-        out = self.fc2(out)
-        out = self.relu2(out)
-        out = self.dropout2(out)
+        return output
+
+
+class EncoderForClassification(nn.Module):
+    """
+    Encoder model with BiLSTM for text classification
+    For classification task (many-to-one) - outputs single label for entire sentence
+    Uses Global Max Pooling to aggregate sequence features
+    """
+    def __init__(self, vocab_size, embedding_dim, hidden_size, num_layers, dropout, num_classes):
+        super(EncoderForClassification, self).__init__()
+
+        self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=0)
+        
+        # Bidirectional LSTM
+        self.bilstm = nn.LSTM(
+            embedding_dim, 
+            hidden_size, 
+            num_layers, 
+            dropout=dropout if num_layers > 1 else 0,
+            batch_first=True,
+            bidirectional=True
+        )
+        
+        # BiLSTM output is 2 * hidden_size (forward + backward)
+        self.fc = nn.Linear(2 * hidden_size, num_classes)
+        self.dropout = nn.Dropout(dropout)
+    
+    def forward(self, x):
+        # Embedding layer
+        embedded = self.embedding(x)  # (batch_size, seq_length, embedding_dim)
+        embedded = self.dropout(embedded)
+        
+        # BiLSTM layers
+        lstm_out, (hidden, cell) = self.bilstm(embedded)
+        # lstm_out shape: (batch_size, seq_length, 2 * hidden_size)
+        
+        # Permute to (batch, 2*hidden, seq_len) for max_pool1d
+        lstm_out = lstm_out.permute(0, 2, 1)  # (batch_size, 2 * hidden_size, seq_length)
+        
+        # Global Max Pooling: compress seq_length dimension to 1
+        pooled = F.max_pool1d(lstm_out, kernel_size=lstm_out.shape[2]).squeeze(2)
+        # pooled shape: (batch_size, 2 * hidden_size)
+        
+        pooled = self.dropout(pooled)
         
         # Final classification layer
-        out = self.fc3(out)  # (batch_size, 3)
+        output = self.fc(pooled)  # (batch_size, num_classes)
         
-        return out
+        return output
