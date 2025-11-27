@@ -1,0 +1,27 @@
+model:
+  name: "LSTM"
+  vocab_size: null  
+  embedding_dim: 128
+  hidden_size: 256
+  num_layers: 5
+  dropout: 0.3
+  num_classes: 3  
+
+data:
+  train_path: "dataset/UIT-VSFC/UIT-VSFC-train.json"
+  dev_path: "dataset/UIT-VSFC/UIT-VSFC-dev.json"
+  test_path: "dataset/UIT-VSFC/UIT-VSFC-test.json"
+  task: "sentiment" 
+  max_length: 128
+  batch_size: 32
+  num_workers: 0
+
+training:
+  num_epochs: 20
+  learning_rate: 0.001
+  device: "cuda" 
+
+paths:
+  log_dir: "logs"
+  model_save_dir: "models"
+  model_name: "lstm_best_model.pt"
