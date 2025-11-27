@@ -23,14 +23,71 @@ from trainer_ner import NERTrainer
 
 def main():
     parser = argparse.ArgumentParser(description='Train models (LSTM/GRU for classification or Encoder for NER)')
-    parser.add_argument('--config', type=str, default='lstm.yaml')
-    parser.add_argument('--mode', type=str, default='train', choices=['train', 'test'])
-    parser.add_argument('--model_path', type=str, default=None)
+    parser.add_argument('--config', type=str, default='lstm.yaml',
+                       help='Config file name (default: lstm.yaml)')
+    parser.add_argument('--mode', type=str, default='train', choices=['train', 'test'],
+                       help='Mode: train or test (default: train)')
+    parser.add_argument('--model_path', type=str, default=None,
+                       help='Path to saved model for testing')
+    
+    # Training hyperparameters (override config)
+    parser.add_argument('--lr', type=float, default=None,
+                       help='Learning rate (overrides config)')
+    parser.add_argument('--epochs', type=int, default=None,
+                       help='Number of epochs (overrides config)')
+    parser.add_argument('--batch_size', type=int, default=None,
+                       help='Batch size (overrides config)')
+    parser.add_argument('--device', type=str, default=None, choices=['cuda', 'cpu'],
+                       help='Device: cuda or cpu (overrides config)')
+    
+    # Model architecture (override config)
+    parser.add_argument('--embedding_dim', type=int, default=None,
+                       help='Embedding dimension (overrides config)')
+    parser.add_argument('--hidden_size', type=int, default=None,
+                       help='Hidden size (overrides config)')
+    parser.add_argument('--num_layers', type=int, default=None,
+                       help='Number of layers (overrides config)')
+    parser.add_argument('--dropout', type=float, default=None,
+                       help='Dropout rate (overrides config)')
+    
     args = parser.parse_args()
     
     # Load configuration
     config_path = get_config_path(args.config.replace('.yaml', ''))
     config = load_config(config_path)
+    
+    # Override config with command line arguments
+    if args.lr is not None:
+        config.training.learning_rate = args.lr
+        print(f"[Override] Learning rate: {args.lr}")
+    
+    if args.epochs is not None:
+        config.training.num_epochs = args.epochs
+        print(f"[Override] Num epochs: {args.epochs}")
+    
+    if args.batch_size is not None:
+        config.data.batch_size = args.batch_size
+        print(f"[Override] Batch size: {args.batch_size}")
+    
+    if args.device is not None:
+        config.training.device = args.device
+        print(f"[Override] Device: {args.device}")
+    
+    if args.embedding_dim is not None:
+        config.model.embedding_dim = args.embedding_dim
+        print(f"[Override] Embedding dim: {args.embedding_dim}")
+    
+    if args.hidden_size is not None:
+        config.model.hidden_size = args.hidden_size
+        print(f"[Override] Hidden size: {args.hidden_size}")
+    
+    if args.num_layers is not None:
+        config.model.num_layers = args.num_layers
+        print(f"[Override] Num layers: {args.num_layers}")
+    
+    if args.dropout is not None:
+        config.model.dropout = args.dropout
+        print(f"[Override] Dropout: {args.dropout}")
     
     # Set device
     device = config.training.device
