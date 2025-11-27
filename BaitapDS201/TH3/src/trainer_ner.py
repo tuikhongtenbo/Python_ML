@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader
 from sklearn.metrics import f1_score, accuracy_score, classification_report
 import numpy as np
 from tqdm import tqdm
-from typing import Dict, Tuple
+from typing import Dict
 
 from utils.logger import setup_logger
 
@@ -39,20 +39,17 @@ class NERTrainer:
         # Training history
         self.history = {
             'train_loss': [],
-            'train_f1': [],
             'dev_loss': [],
             'dev_f1': [],
             'dev_accuracy': []
         }
     
-    def train_epoch(self) -> Tuple[float, float]:
+    def train_epoch(self) -> float:
         """
         Train for one epoch
         """
         self.model.train()
         total_loss = 0
-        all_predictions = []
-        all_labels = []
         
         progress_bar = tqdm(self.train_loader, desc="Training")
         for batch_idx, (inputs, labels) in enumerate(progress_bar):
@@ -74,31 +71,16 @@ class NERTrainer:
             loss.backward()
             self.optimizer.step()
             
-            # Statistics (ignore padding tokens)
+            # Statistics
             total_loss += loss.item()
-            predictions = torch.argmax(outputs, dim=2)  # (batch_size, seq_length)
-            
-            # Flatten for metric calculation
-            predictions_flat = predictions.view(-1).cpu().numpy()
-            labels_flat_np = labels_flat.cpu().numpy()
-            
-            # Filter out padding 
-            mask = (labels_flat_np != 0) & (labels_flat_np != -1)
-            if mask.sum() > 0:
-                all_predictions.extend(predictions_flat[mask])
-                all_labels.extend(labels_flat_np[mask])
             
             # Update progress bar
             progress_bar.set_postfix({'loss': loss.item()})
         
-        # Calculate metrics
+        # Calculate average loss
         avg_loss = total_loss / len(self.train_loader)
-        if len(all_predictions) > 0:
-            f1 = f1_score(all_labels, all_predictions, average='weighted')
-        else:
-            f1 = 0.0
         
-        return avg_loss, f1
+        return avg_loss
     
     def evaluate(self, data_loader: DataLoader) -> Dict[str, float]:
         """
@@ -140,7 +122,8 @@ class NERTrainer:
         # Calculate metrics
         avg_loss = total_loss / len(data_loader)
         if len(all_predictions) > 0:
-            f1 = f1_score(all_labels, all_predictions, average='weighted')
+
+            f1 = f1_score(all_labels, all_predictions, average='macro', zero_division=0)
             accuracy = accuracy_score(all_labels, all_predictions)
         else:
             f1 = 0.0
@@ -172,9 +155,8 @@ class NERTrainer:
             self.logger.info(f"\nEpoch {epoch}/{num_epochs}")
             
             # Train
-            train_loss, train_f1 = self.train_epoch()
+            train_loss = self.train_epoch()
             self.history['train_loss'].append(train_loss)
-            self.history['train_f1'].append(train_f1)
             
             # Evaluate on dev set
             dev_metrics = self.evaluate(self.dev_loader)
@@ -183,7 +165,7 @@ class NERTrainer:
             self.history['dev_accuracy'].append(dev_metrics['accuracy'])
             
             # Log metrics
-            self.logger.info(f"Train Loss: {train_loss:.4f}, Train F1: {train_f1:.4f}")
+            self.logger.info(f"Train Loss: {train_loss:.4f}")
             self.logger.info(f"Dev Loss: {dev_metrics['loss']:.4f}, Dev F1: {dev_metrics['f1']:.4f}, "
                            f"Dev Accuracy: {dev_metrics['accuracy']:.4f}")
             
