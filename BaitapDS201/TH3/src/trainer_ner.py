@@ -31,7 +31,7 @@ class NERTrainer:
         self.logger = setup_logger(log_dir, "ner_trainer")
         
         # Loss function 
-        self.criterion = nn.CrossEntropyLoss(ignore_index=-1)
+        self.criterion = nn.CrossEntropyLoss(ignore_index=0)
         
         # Optimizer (Adam)
         self.optimizer = optim.Adam(self.model.parameters(), lr=learning_rate)
