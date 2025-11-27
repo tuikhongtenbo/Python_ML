@@ -195,7 +195,7 @@ class NERTrainer:
             Dictionary with test metrics
         """
         if model_path:
-            checkpoint = torch.load(model_path, map_location=self.device)
+            checkpoint = torch.load(model_path, map_location=self.device, weights_only=False)
             self.model.load_state_dict(checkpoint['model_state_dict'])
             self.logger.info(f"Loaded model from {model_path}")
         
