@@ -1,0 +1,174 @@
+2025-11-27 12:14:37,951 - ner_trainer - INFO - Starting training for 30 epochs
+2025-11-27 12:14:37,951 - ner_trainer - INFO - Device: cuda
+2025-11-27 12:14:37,951 - ner_trainer - INFO - Model parameters: 8,484,885
+2025-11-27 12:14:37,951 - ner_trainer - INFO - 
+Epoch 1/30
+2025-11-27 12:14:57,952 - ner_trainer - INFO - Train Loss: 1.0132
+2025-11-27 12:14:57,952 - ner_trainer - INFO - Dev Loss: 0.8927, Dev F1: 0.0452, Dev Accuracy: 0.7492
+2025-11-27 12:14:58,171 - ner_trainer - INFO - Saved best model with F1: 0.0452
+2025-11-27 12:14:58,171 - ner_trainer - INFO - 
+Epoch 2/30
+2025-11-27 12:15:17,956 - ner_trainer - INFO - Train Loss: 0.5195
+2025-11-27 12:15:17,956 - ner_trainer - INFO - Dev Loss: 0.4147, Dev F1: 0.4081, Dev Accuracy: 0.8799
+2025-11-27 12:15:18,163 - ner_trainer - INFO - Saved best model with F1: 0.4081
+2025-11-27 12:15:18,163 - ner_trainer - INFO - 
+Epoch 3/30
+2025-11-27 12:15:37,990 - ner_trainer - INFO - Train Loss: 0.2591
+2025-11-27 12:15:37,990 - ner_trainer - INFO - Dev Loss: 0.2974, Dev F1: 0.5146, Dev Accuracy: 0.9123
+2025-11-27 12:15:38,186 - ner_trainer - INFO - Saved best model with F1: 0.5146
+2025-11-27 12:15:38,186 - ner_trainer - INFO - 
+Epoch 4/30
+2025-11-27 12:15:58,313 - ner_trainer - INFO - Train Loss: 0.1827
+2025-11-27 12:15:58,313 - ner_trainer - INFO - Dev Loss: 0.2746, Dev F1: 0.5809, Dev Accuracy: 0.9219
+2025-11-27 12:15:58,517 - ner_trainer - INFO - Saved best model with F1: 0.5809
+2025-11-27 12:15:58,517 - ner_trainer - INFO - 
+Epoch 5/30
+2025-11-27 12:16:18,467 - ner_trainer - INFO - Train Loss: 0.1437
+2025-11-27 12:16:18,467 - ner_trainer - INFO - Dev Loss: 0.2528, Dev F1: 0.6120, Dev Accuracy: 0.9286
+2025-11-27 12:16:18,655 - ner_trainer - INFO - Saved best model with F1: 0.6120
+2025-11-27 12:16:18,655 - ner_trainer - INFO - 
+Epoch 6/30
+2025-11-27 12:16:38,604 - ner_trainer - INFO - Train Loss: 0.1171
+2025-11-27 12:16:38,604 - ner_trainer - INFO - Dev Loss: 0.2494, Dev F1: 0.6494, Dev Accuracy: 0.9320
+2025-11-27 12:16:38,792 - ner_trainer - INFO - Saved best model with F1: 0.6494
+2025-11-27 12:16:38,792 - ner_trainer - INFO - 
+Epoch 7/30
+2025-11-27 12:16:58,728 - ner_trainer - INFO - Train Loss: 0.1016
+2025-11-27 12:16:58,729 - ner_trainer - INFO - Dev Loss: 0.2587, Dev F1: 0.6601, Dev Accuracy: 0.9339
+2025-11-27 12:16:58,923 - ner_trainer - INFO - Saved best model with F1: 0.6601
+2025-11-27 12:16:58,923 - ner_trainer - INFO - 
+Epoch 8/30
+2025-11-27 12:17:19,087 - ner_trainer - INFO - Train Loss: 0.0842
+2025-11-27 12:17:19,087 - ner_trainer - INFO - Dev Loss: 0.2481, Dev F1: 0.7049, Dev Accuracy: 0.9370
+2025-11-27 12:17:19,270 - ner_trainer - INFO - Saved best model with F1: 0.7049
+2025-11-27 12:17:19,270 - ner_trainer - INFO - 
+Epoch 9/30
+2025-11-27 12:17:39,117 - ner_trainer - INFO - Train Loss: 0.0756
+2025-11-27 12:17:39,118 - ner_trainer - INFO - Dev Loss: 0.2554, Dev F1: 0.7034, Dev Accuracy: 0.9335
+2025-11-27 12:17:39,118 - ner_trainer - INFO - 
+Epoch 10/30
+2025-11-27 12:17:58,975 - ner_trainer - INFO - Train Loss: 0.0660
+2025-11-27 12:17:58,976 - ner_trainer - INFO - Dev Loss: 0.2544, Dev F1: 0.7212, Dev Accuracy: 0.9373
+2025-11-27 12:17:59,153 - ner_trainer - INFO - Saved best model with F1: 0.7212
+2025-11-27 12:17:59,153 - ner_trainer - INFO - 
+Epoch 11/30
+2025-11-27 12:18:19,180 - ner_trainer - INFO - Train Loss: 0.0538
+2025-11-27 12:18:19,180 - ner_trainer - INFO - Dev Loss: 0.2659, Dev F1: 0.7052, Dev Accuracy: 0.9384
+2025-11-27 12:18:19,180 - ner_trainer - INFO - 
+Epoch 12/30
+2025-11-27 12:18:39,235 - ner_trainer - INFO - Train Loss: 0.0496
+2025-11-27 12:18:39,235 - ner_trainer - INFO - Dev Loss: 0.2673, Dev F1: 0.7167, Dev Accuracy: 0.9401
+2025-11-27 12:18:39,235 - ner_trainer - INFO - 
+Epoch 13/30
+2025-11-27 12:18:58,957 - ner_trainer - INFO - Train Loss: 0.0461
+2025-11-27 12:18:58,958 - ner_trainer - INFO - Dev Loss: 0.2798, Dev F1: 0.7202, Dev Accuracy: 0.9389
+2025-11-27 12:18:58,958 - ner_trainer - INFO - 
+Epoch 14/30
+2025-11-27 12:19:18,644 - ner_trainer - INFO - Train Loss: 0.0406
+2025-11-27 12:19:18,644 - ner_trainer - INFO - Dev Loss: 0.2822, Dev F1: 0.7281, Dev Accuracy: 0.9384
+2025-11-27 12:19:18,821 - ner_trainer - INFO - Saved best model with F1: 0.7281
+2025-11-27 12:19:18,821 - ner_trainer - INFO - 
+Epoch 15/30
+2025-11-27 12:19:38,854 - ner_trainer - INFO - Train Loss: 0.0368
+2025-11-27 12:19:38,854 - ner_trainer - INFO - Dev Loss: 0.2868, Dev F1: 0.7286, Dev Accuracy: 0.9363
+2025-11-27 12:19:39,052 - ner_trainer - INFO - Saved best model with F1: 0.7286
+2025-11-27 12:19:39,052 - ner_trainer - INFO - 
+Epoch 16/30
+2025-11-27 12:19:59,193 - ner_trainer - INFO - Train Loss: 0.0330
+2025-11-27 12:19:59,194 - ner_trainer - INFO - Dev Loss: 0.2972, Dev F1: 0.7374, Dev Accuracy: 0.9393
+2025-11-27 12:19:59,381 - ner_trainer - INFO - Saved best model with F1: 0.7374
+2025-11-27 12:19:59,381 - ner_trainer - INFO - 
+Epoch 17/30
+2025-11-27 12:20:19,079 - ner_trainer - INFO - Train Loss: 0.0311
+2025-11-27 12:20:19,079 - ner_trainer - INFO - Dev Loss: 0.3009, Dev F1: 0.7240, Dev Accuracy: 0.9377
+2025-11-27 12:20:19,079 - ner_trainer - INFO - 
+Epoch 18/30
+2025-11-27 12:20:38,784 - ner_trainer - INFO - Train Loss: 0.0312
+2025-11-27 12:20:38,784 - ner_trainer - INFO - Dev Loss: 0.3067, Dev F1: 0.7181, Dev Accuracy: 0.9358
+2025-11-27 12:20:38,784 - ner_trainer - INFO - 
+Epoch 19/30
+2025-11-27 12:20:58,806 - ner_trainer - INFO - Train Loss: 0.0275
+2025-11-27 12:20:58,807 - ner_trainer - INFO - Dev Loss: 0.3021, Dev F1: 0.7273, Dev Accuracy: 0.9386
+2025-11-27 12:20:58,807 - ner_trainer - INFO - 
+Epoch 20/30
+2025-11-27 12:21:18,798 - ner_trainer - INFO - Train Loss: 0.0274
+2025-11-27 12:21:18,798 - ner_trainer - INFO - Dev Loss: 0.3146, Dev F1: 0.6898, Dev Accuracy: 0.9358
+2025-11-27 12:21:18,799 - ner_trainer - INFO - 
+Epoch 21/30
+2025-11-27 12:21:38,750 - ner_trainer - INFO - Train Loss: 0.0258
+2025-11-27 12:21:38,750 - ner_trainer - INFO - Dev Loss: 0.3211, Dev F1: 0.7348, Dev Accuracy: 0.9380
+2025-11-27 12:21:38,750 - ner_trainer - INFO - 
+Epoch 22/30
+2025-11-27 12:21:58,750 - ner_trainer - INFO - Train Loss: 0.0216
+2025-11-27 12:21:58,750 - ner_trainer - INFO - Dev Loss: 0.3175, Dev F1: 0.7342, Dev Accuracy: 0.9381
+2025-11-27 12:21:58,750 - ner_trainer - INFO - 
+Epoch 23/30
+2025-11-27 12:22:18,760 - ner_trainer - INFO - Train Loss: 0.0172
+2025-11-27 12:22:18,760 - ner_trainer - INFO - Dev Loss: 0.3323, Dev F1: 0.7351, Dev Accuracy: 0.9373
+2025-11-27 12:22:18,760 - ner_trainer - INFO - 
+Epoch 24/30
+2025-11-27 12:22:38,750 - ner_trainer - INFO - Train Loss: 0.0158
+2025-11-27 12:22:38,750 - ner_trainer - INFO - Dev Loss: 0.3254, Dev F1: 0.7387, Dev Accuracy: 0.9392
+2025-11-27 12:22:38,933 - ner_trainer - INFO - Saved best model with F1: 0.7387
+2025-11-27 12:22:38,933 - ner_trainer - INFO - 
+Epoch 25/30
+2025-11-27 12:22:58,617 - ner_trainer - INFO - Train Loss: 0.0173
+2025-11-27 12:22:58,618 - ner_trainer - INFO - Dev Loss: 0.3358, Dev F1: 0.7414, Dev Accuracy: 0.9389
+2025-11-27 12:22:58,798 - ner_trainer - INFO - Saved best model with F1: 0.7414
+2025-11-27 12:22:58,798 - ner_trainer - INFO - 
+Epoch 26/30
+2025-11-27 12:23:18,451 - ner_trainer - INFO - Train Loss: 0.0164
+2025-11-27 12:23:18,451 - ner_trainer - INFO - Dev Loss: 0.3255, Dev F1: 0.7014, Dev Accuracy: 0.9388
+2025-11-27 12:23:18,452 - ner_trainer - INFO - 
+Epoch 27/30
+2025-11-27 12:23:38,433 - ner_trainer - INFO - Train Loss: 0.0160
+2025-11-27 12:23:38,433 - ner_trainer - INFO - Dev Loss: 0.3522, Dev F1: 0.7544, Dev Accuracy: 0.9399
+2025-11-27 12:23:38,614 - ner_trainer - INFO - Saved best model with F1: 0.7544
+2025-11-27 12:23:38,614 - ner_trainer - INFO - 
+Epoch 28/30
+2025-11-27 12:23:58,738 - ner_trainer - INFO - Train Loss: 0.0137
+2025-11-27 12:23:58,738 - ner_trainer - INFO - Dev Loss: 0.3729, Dev F1: 0.7362, Dev Accuracy: 0.9381
+2025-11-27 12:23:58,739 - ner_trainer - INFO - 
+Epoch 29/30
+2025-11-27 12:24:18,503 - ner_trainer - INFO - Train Loss: 0.0153
+2025-11-27 12:24:18,503 - ner_trainer - INFO - Dev Loss: 0.3383, Dev F1: 0.7383, Dev Accuracy: 0.9371
+2025-11-27 12:24:18,503 - ner_trainer - INFO - 
+Epoch 30/30
+2025-11-27 12:24:38,172 - ner_trainer - INFO - Train Loss: 0.0132
+2025-11-27 12:24:38,173 - ner_trainer - INFO - Dev Loss: 0.3684, Dev F1: 0.7436, Dev Accuracy: 0.9394
+2025-11-27 12:24:38,173 - ner_trainer - INFO - 
+Training completed. Best F1: 0.7544
+2025-11-27 12:24:38,249 - ner_trainer - INFO - Loaded model from models/encoder_best_model.pt
+2025-11-27 12:24:38,249 - ner_trainer - INFO - Evaluating on test set...
+2025-11-27 12:24:42,054 - ner_trainer - INFO - Test Loss: 0.4076
+2025-11-27 12:24:42,054 - ner_trainer - INFO - Test F1: 0.6719
+2025-11-27 12:24:42,054 - ner_trainer - INFO - Test Accuracy: 0.9318
+2025-11-27 12:24:42,135 - ner_trainer - INFO - 
+Classification Report:
+                       precision    recall  f1-score   support
+
+                B-AGE       0.90      0.94      0.92       581
+               B-DATE       0.94      0.94      0.94      1652
+             B-GENDER       0.86      0.93      0.90       461
+                B-JOB       0.69      0.61      0.65       173
+           B-LOCATION       0.81      0.85      0.83      4438
+               B-NAME       0.47      0.59      0.52       318
+       B-ORGANIZATION       0.71      0.67      0.69       771
+         B-PATIENT_ID       0.94      0.86      0.90      2002
+B-SYMPTOM_AND_DISEASE       0.90      0.80      0.85      1136
+     B-TRANSPORTATION       0.91      0.85      0.88       193
+                I-AGE       1.00      0.17      0.29         6
+               I-DATE       0.97      0.98      0.98      1746
+                I-JOB       0.51      0.17      0.25       114
+           I-LOCATION       0.82      0.80      0.81      4913
+               I-NAME       0.00      0.00      0.00        13
+       I-ORGANIZATION       0.80      0.74      0.77      2014
+         I-PATIENT_ID       0.00      0.00      0.00        27
+I-SYMPTOM_AND_DISEASE       0.94      0.67      0.78      1486
+     I-TRANSPORTATION       0.96      0.36      0.53        69
+                    O       0.96      0.97      0.97     63510
+
+             accuracy                           0.93     85623
+            macro avg       0.75      0.65      0.67     85623
+         weighted avg       0.93      0.93      0.93     85623
+

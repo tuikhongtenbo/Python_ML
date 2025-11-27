@@ -1,0 +1,153 @@
+2025-11-27 12:26:21,155 - lstm_trainer - INFO - Starting training for 30 epochs
+2025-11-27 12:26:21,155 - lstm_trainer - INFO - Device: cuda
+2025-11-27 12:26:21,155 - lstm_trainer - INFO - Model parameters: 2,743,043
+2025-11-27 12:26:21,155 - lstm_trainer - INFO - 
+Epoch 1/30
+2025-11-27 12:26:40,179 - lstm_trainer - INFO - Train Loss: 0.6999
+2025-11-27 12:26:40,179 - lstm_trainer - INFO - Dev Loss: 0.6880, Dev F1: 0.4776, Dev Accuracy: 0.7094
+2025-11-27 12:26:40,251 - lstm_trainer - INFO - Saved best model with F1: 0.4776
+2025-11-27 12:26:40,251 - lstm_trainer - INFO - 
+Epoch 2/30
+2025-11-27 12:26:59,245 - lstm_trainer - INFO - Train Loss: 0.6342
+2025-11-27 12:26:59,245 - lstm_trainer - INFO - Dev Loss: 0.5377, Dev F1: 0.5596, Dev Accuracy: 0.8206
+2025-11-27 12:26:59,310 - lstm_trainer - INFO - Saved best model with F1: 0.5596
+2025-11-27 12:26:59,310 - lstm_trainer - INFO - 
+Epoch 3/30
+2025-11-27 12:27:18,493 - lstm_trainer - INFO - Train Loss: 0.4263
+2025-11-27 12:27:18,493 - lstm_trainer - INFO - Dev Loss: 0.4464, Dev F1: 0.5915, Dev Accuracy: 0.8667
+2025-11-27 12:27:18,560 - lstm_trainer - INFO - Saved best model with F1: 0.5915
+2025-11-27 12:27:18,560 - lstm_trainer - INFO - 
+Epoch 4/30
+2025-11-27 12:27:37,718 - lstm_trainer - INFO - Train Loss: 0.3472
+2025-11-27 12:27:37,719 - lstm_trainer - INFO - Dev Loss: 0.3580, Dev F1: 0.6082, Dev Accuracy: 0.8913
+2025-11-27 12:27:37,783 - lstm_trainer - INFO - Saved best model with F1: 0.6082
+2025-11-27 12:27:37,783 - lstm_trainer - INFO - 
+Epoch 5/30
+2025-11-27 12:27:56,572 - lstm_trainer - INFO - Train Loss: 0.2918
+2025-11-27 12:27:56,572 - lstm_trainer - INFO - Dev Loss: 0.3349, Dev F1: 0.6423, Dev Accuracy: 0.9046
+2025-11-27 12:27:56,633 - lstm_trainer - INFO - Saved best model with F1: 0.6423
+2025-11-27 12:27:56,633 - lstm_trainer - INFO - 
+Epoch 6/30
+2025-11-27 12:28:15,360 - lstm_trainer - INFO - Train Loss: 0.2576
+2025-11-27 12:28:15,360 - lstm_trainer - INFO - Dev Loss: 0.3334, Dev F1: 0.6820, Dev Accuracy: 0.9040
+2025-11-27 12:28:15,422 - lstm_trainer - INFO - Saved best model with F1: 0.6820
+2025-11-27 12:28:15,422 - lstm_trainer - INFO - 
+Epoch 7/30
+2025-11-27 12:28:34,260 - lstm_trainer - INFO - Train Loss: 0.2271
+2025-11-27 12:28:34,261 - lstm_trainer - INFO - Dev Loss: 0.3356, Dev F1: 0.7193, Dev Accuracy: 0.9059
+2025-11-27 12:28:34,323 - lstm_trainer - INFO - Saved best model with F1: 0.7193
+2025-11-27 12:28:34,323 - lstm_trainer - INFO - 
+Epoch 8/30
+2025-11-27 12:28:53,128 - lstm_trainer - INFO - Train Loss: 0.2036
+2025-11-27 12:28:53,129 - lstm_trainer - INFO - Dev Loss: 0.3308, Dev F1: 0.6784, Dev Accuracy: 0.9052
+2025-11-27 12:28:53,129 - lstm_trainer - INFO - 
+Epoch 9/30
+2025-11-27 12:29:11,913 - lstm_trainer - INFO - Train Loss: 0.1751
+2025-11-27 12:29:11,914 - lstm_trainer - INFO - Dev Loss: 0.3506, Dev F1: 0.6912, Dev Accuracy: 0.8857
+2025-11-27 12:29:11,914 - lstm_trainer - INFO - 
+Epoch 10/30
+2025-11-27 12:29:30,726 - lstm_trainer - INFO - Train Loss: 0.1654
+2025-11-27 12:29:30,727 - lstm_trainer - INFO - Dev Loss: 0.3418, Dev F1: 0.7184, Dev Accuracy: 0.9052
+2025-11-27 12:29:30,727 - lstm_trainer - INFO - 
+Epoch 11/30
+2025-11-27 12:29:49,420 - lstm_trainer - INFO - Train Loss: 0.1424
+2025-11-27 12:29:49,420 - lstm_trainer - INFO - Dev Loss: 0.3122, Dev F1: 0.7594, Dev Accuracy: 0.9097
+2025-11-27 12:29:49,484 - lstm_trainer - INFO - Saved best model with F1: 0.7594
+2025-11-27 12:29:49,484 - lstm_trainer - INFO - 
+Epoch 12/30
+2025-11-27 12:30:08,354 - lstm_trainer - INFO - Train Loss: 0.1352
+2025-11-27 12:30:08,355 - lstm_trainer - INFO - Dev Loss: 0.3729, Dev F1: 0.7351, Dev Accuracy: 0.9078
+2025-11-27 12:30:08,355 - lstm_trainer - INFO - 
+Epoch 13/30
+2025-11-27 12:30:27,162 - lstm_trainer - INFO - Train Loss: 0.1197
+2025-11-27 12:30:27,162 - lstm_trainer - INFO - Dev Loss: 0.3168, Dev F1: 0.7561, Dev Accuracy: 0.9046
+2025-11-27 12:30:27,162 - lstm_trainer - INFO - 
+Epoch 14/30
+2025-11-27 12:30:45,954 - lstm_trainer - INFO - Train Loss: 0.1087
+2025-11-27 12:30:45,954 - lstm_trainer - INFO - Dev Loss: 0.3346, Dev F1: 0.7484, Dev Accuracy: 0.9141
+2025-11-27 12:30:45,954 - lstm_trainer - INFO - 
+Epoch 15/30
+2025-11-27 12:31:04,743 - lstm_trainer - INFO - Train Loss: 0.0859
+2025-11-27 12:31:04,743 - lstm_trainer - INFO - Dev Loss: 0.3670, Dev F1: 0.7367, Dev Accuracy: 0.9084
+2025-11-27 12:31:04,743 - lstm_trainer - INFO - 
+Epoch 16/30
+2025-11-27 12:31:23,489 - lstm_trainer - INFO - Train Loss: 0.0966
+2025-11-27 12:31:23,490 - lstm_trainer - INFO - Dev Loss: 0.3652, Dev F1: 0.7623, Dev Accuracy: 0.9103
+2025-11-27 12:31:23,552 - lstm_trainer - INFO - Saved best model with F1: 0.7623
+2025-11-27 12:31:23,552 - lstm_trainer - INFO - 
+Epoch 17/30
+2025-11-27 12:31:42,342 - lstm_trainer - INFO - Train Loss: 0.0851
+2025-11-27 12:31:42,342 - lstm_trainer - INFO - Dev Loss: 0.3935, Dev F1: 0.7237, Dev Accuracy: 0.9078
+2025-11-27 12:31:42,342 - lstm_trainer - INFO - 
+Epoch 18/30
+2025-11-27 12:32:01,204 - lstm_trainer - INFO - Train Loss: 0.0752
+2025-11-27 12:32:01,204 - lstm_trainer - INFO - Dev Loss: 0.4460, Dev F1: 0.7576, Dev Accuracy: 0.9002
+2025-11-27 12:32:01,205 - lstm_trainer - INFO - 
+Epoch 19/30
+2025-11-27 12:32:20,066 - lstm_trainer - INFO - Train Loss: 0.0654
+2025-11-27 12:32:20,066 - lstm_trainer - INFO - Dev Loss: 0.4790, Dev F1: 0.7764, Dev Accuracy: 0.9109
+2025-11-27 12:32:20,133 - lstm_trainer - INFO - Saved best model with F1: 0.7764
+2025-11-27 12:32:20,133 - lstm_trainer - INFO - 
+Epoch 20/30
+2025-11-27 12:32:39,344 - lstm_trainer - INFO - Train Loss: 0.0678
+2025-11-27 12:32:39,344 - lstm_trainer - INFO - Dev Loss: 0.3757, Dev F1: 0.7508, Dev Accuracy: 0.9059
+2025-11-27 12:32:39,344 - lstm_trainer - INFO - 
+Epoch 21/30
+2025-11-27 12:32:58,498 - lstm_trainer - INFO - Train Loss: 0.0577
+2025-11-27 12:32:58,498 - lstm_trainer - INFO - Dev Loss: 0.4285, Dev F1: 0.7692, Dev Accuracy: 0.9141
+2025-11-27 12:32:58,498 - lstm_trainer - INFO - 
+Epoch 22/30
+2025-11-27 12:33:17,569 - lstm_trainer - INFO - Train Loss: 0.0561
+2025-11-27 12:33:17,569 - lstm_trainer - INFO - Dev Loss: 0.4169, Dev F1: 0.7770, Dev Accuracy: 0.9078
+2025-11-27 12:33:17,632 - lstm_trainer - INFO - Saved best model with F1: 0.7770
+2025-11-27 12:33:17,632 - lstm_trainer - INFO - 
+Epoch 23/30
+2025-11-27 12:33:36,645 - lstm_trainer - INFO - Train Loss: 0.0618
+2025-11-27 12:33:36,645 - lstm_trainer - INFO - Dev Loss: 0.4421, Dev F1: 0.7480, Dev Accuracy: 0.9052
+2025-11-27 12:33:36,646 - lstm_trainer - INFO - 
+Epoch 24/30
+2025-11-27 12:33:55,680 - lstm_trainer - INFO - Train Loss: 0.0536
+2025-11-27 12:33:55,680 - lstm_trainer - INFO - Dev Loss: 0.4313, Dev F1: 0.7653, Dev Accuracy: 0.9046
+2025-11-27 12:33:55,680 - lstm_trainer - INFO - 
+Epoch 25/30
+2025-11-27 12:34:14,699 - lstm_trainer - INFO - Train Loss: 0.0487
+2025-11-27 12:34:14,700 - lstm_trainer - INFO - Dev Loss: 0.4252, Dev F1: 0.7733, Dev Accuracy: 0.9097
+2025-11-27 12:34:14,700 - lstm_trainer - INFO - 
+Epoch 26/30
+2025-11-27 12:34:33,586 - lstm_trainer - INFO - Train Loss: 0.0421
+2025-11-27 12:34:33,586 - lstm_trainer - INFO - Dev Loss: 0.3976, Dev F1: 0.7760, Dev Accuracy: 0.9122
+2025-11-27 12:34:33,586 - lstm_trainer - INFO - 
+Epoch 27/30
+2025-11-27 12:34:52,401 - lstm_trainer - INFO - Train Loss: 0.0574
+2025-11-27 12:34:52,401 - lstm_trainer - INFO - Dev Loss: 0.4845, Dev F1: 0.7680, Dev Accuracy: 0.9109
+2025-11-27 12:34:52,401 - lstm_trainer - INFO - 
+Epoch 28/30
+2025-11-27 12:35:11,315 - lstm_trainer - INFO - Train Loss: 0.0410
+2025-11-27 12:35:11,315 - lstm_trainer - INFO - Dev Loss: 0.4712, Dev F1: 0.7529, Dev Accuracy: 0.9002
+2025-11-27 12:35:11,315 - lstm_trainer - INFO - 
+Epoch 29/30
+2025-11-27 12:35:30,323 - lstm_trainer - INFO - Train Loss: 0.0430
+2025-11-27 12:35:30,323 - lstm_trainer - INFO - Dev Loss: 0.5524, Dev F1: 0.7621, Dev Accuracy: 0.8996
+2025-11-27 12:35:30,324 - lstm_trainer - INFO - 
+Epoch 30/30
+2025-11-27 12:35:49,395 - lstm_trainer - INFO - Train Loss: 0.0362
+2025-11-27 12:35:49,395 - lstm_trainer - INFO - Dev Loss: 0.3963, Dev F1: 0.7651, Dev Accuracy: 0.9052
+2025-11-27 12:35:49,395 - lstm_trainer - INFO - 
+Training completed. Best F1: 0.7770
+2025-11-27 12:35:49,434 - lstm_trainer - INFO - Loaded model from models/gru_best_model.pt
+2025-11-27 12:35:49,434 - lstm_trainer - INFO - Evaluating on test set...
+2025-11-27 12:35:51,242 - lstm_trainer - INFO - Test Loss: 0.5307
+2025-11-27 12:35:51,242 - lstm_trainer - INFO - Test F1: 0.7500
+2025-11-27 12:35:51,242 - lstm_trainer - INFO - Test Accuracy: 0.8942
+2025-11-27 12:35:51,250 - lstm_trainer - INFO - 
+Classification Report:
+              precision    recall  f1-score   support
+
+    negative       0.91      0.93      0.92      1409
+     neutral       0.48      0.37      0.41       167
+    positive       0.92      0.92      0.92      1590
+
+    accuracy                           0.89      3166
+   macro avg       0.77      0.74      0.75      3166
+weighted avg       0.89      0.89      0.89      3166
+
